@@ -23,8 +23,8 @@ export default {
     const axios = inject('axios')
     const emitter = inject('emitter')
     /* Función para buscar comentarios por cada uno de los Characters*/
-    const getCharacterCommentsCount = (idCharacter) => {
-      axios.get(`/api/characters/${idCharacter}/comments/count`).then(resp => {
+    const getCharacterCommentsCount = () => {
+      axios.get(`/api/characters/${route.params.id}/comments/count`).then(resp => {
         count.value = resp.data.commentsCount
       }).catch(e => {
         console.log(e)
@@ -33,7 +33,7 @@ export default {
     }
     /* Recibe el evento cuando se agrega un nuevo comentario a un Character */
     emitter.on('updateCharacter', () => {
-      getCharacterCommentsCount(route.params.id)
+      getCharacterCommentsCount()
     })
     onMounted(() =>{
       getCharacterCommentsCount()
