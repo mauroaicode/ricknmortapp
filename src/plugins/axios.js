@@ -3,7 +3,6 @@ import axios from 'axios'
 export const axiosInstance = axios.create({
     baseURL: process.env.VUE_APP_BACK_URL,
     headers: {
-        Authorization: 'Bearer {token}',
         "Access-Control-Allow-Origin": "*",
         'Content-Type': 'application/json'
     }
