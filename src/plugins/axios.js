@@ -2,10 +2,10 @@ import axios from 'axios'
 
 export const axiosInstance = axios.create({
     baseURL: process.env.VUE_APP_BACK_URL,
-    headers: {
-        "Access-Control-Allow-Origin": "*",
-        'Content-Type': 'application/json'
-    }
+    // headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     'Content-Type': 'application/json'
+    // }
 })
 // window.axios = axios
 // window.axios.defaults.baseURL = 'http://localhost:8001'
